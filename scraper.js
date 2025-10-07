@@ -22,7 +22,7 @@ function updateRow(db, value) {
 
 function readRows(db) {
 	// Read some data.
-	db.each("SELECT rowid AS id, name FROM data", function(err, row) {
+	db.each("SELECT rowid AS id, name FROM data ORDER BY rowid desc LIMIT 3", function(err, row) {
 		console.log(row.id + ": " + row.name);
 	});
 }
